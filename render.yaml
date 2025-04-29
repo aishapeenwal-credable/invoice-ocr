@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: llama-doc-extractor
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: TOGETHER_API_KEY
+        sync: false
+      - key: TOGETHER_LLM_MODEL
+        sync: false
