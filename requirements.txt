@@ -5,3 +5,4 @@ Pillow
 pytesseract
 pdf2image
 python-dotenv
+gunicorn
