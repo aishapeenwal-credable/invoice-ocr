@@ -12,7 +12,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app, origins="*")  # Or whitelist your domain
-
+CORS(app, origins=["https://id-preview--3474ee39-2650-4791-ae98-e4e2992f0966.lovable.app"])
 
 load_dotenv()
 
