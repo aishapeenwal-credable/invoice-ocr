@@ -8,6 +8,11 @@ import re
 import json
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app, origins="*")  # Or whitelist your domain
+
 
 load_dotenv()
 
