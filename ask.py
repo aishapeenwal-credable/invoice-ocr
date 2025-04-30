@@ -11,12 +11,12 @@ from dotenv import load_dotenv
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins="*")  # Or whitelist your domain
-CORS(app, origins=["https://id-preview--3474ee39-2650-4791-ae98-e4e2992f0966.lovable.app"])
+CORS(app, origins=[
+    "http://localhost:3000",
+    "https://id-preview--3474ee39-2650-4791-ae98-e4e2992f0966.lovable.app"
+])
 
 load_dotenv()
-
-app = Flask(__name__)
 
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 TOGETHER_LLM_MODEL = os.getenv("TOGETHER_LLM_MODEL", "deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free")
