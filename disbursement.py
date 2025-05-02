@@ -14,13 +14,21 @@ import json
 import re
 from dotenv import load_dotenv
 from flask_cors import CORS
+from fastapi.middleware.cors import CORSMiddleware
 
 app = Flask(__name__)
-CORS(app, origins=[
-    "http://localhost:3000",
-    "https://id-preview--3474ee39-2650-4791-ae98-e4e2992f0966.lovable.app"
-])
-
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "https://id-preview--3474ee39-2650-4791-ae98-e4e2992f0966.lovable.app",
+        "https://web.postman.co"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 load_dotenv()
 
 # Initialize FastAPI
